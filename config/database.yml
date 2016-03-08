@@ -1,0 +1,11 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: tvshow_development
+test:
+  <<: *default
+  database: tvshow_test 
