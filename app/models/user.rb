@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  validates :name, presence: true
   has_many :shows
+  validates :name, presence: true
 end

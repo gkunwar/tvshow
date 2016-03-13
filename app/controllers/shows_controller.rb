@@ -1,7 +1,7 @@
 class ShowsController < ApplicationController
   def index
-    @shows = Array.new
-    User.order('created_at DESC').includes(:shows).map{|u| @shows << u.shows.last}
+    @shows = []
+    Show.joins(:user).order('users.created_at DESC').group_by(&:user_id).map { |_k,shows| @shows << shows.last }
     render json: @shows
   end
 end
