@@ -13,9 +13,11 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5.0.beta1'
+  gem 'pry-rails'
 end
 
 group :test do
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
   gem 'factory_girl_rails', '~> 4.6'
+  gem 'rails-controller-testing'
 end
